@@ -1,0 +1,40 @@
+public class ExceptionDemo {
+   // Exception and Error
+    	// Exception :: Unexpected events occurs during the execution that terminates the execution.
+    	// Error     :: Syntactical Error (e.g., missing semicolon ==> ';')
+    	
+    // Keywords : try, catch, finally, throw
+		// try   - we put our doubtful code into this block.
+		// catch - we catch our exception into this block.
+		// finally - this block is always executed whether execption occurs or not.
+    
+    // Exception (parent class)
+    	// DmlException
+    	// LimitException
+    	// ListException
+    	// NullPointerException
+    	// QueryException
+    
+    // DmlException
+    
+    public static void DmlExcepationDemo(){
+        try{//put doubtfull code here
+            Account acc = new Account();
+            //acc.Name = 'Exception Account';
+            insert acc;
+            system.debug('Acc Created :'+ acc);
+         }
+        catch(DmlException ex){
+            System.debug('Catch Block :'+ ex);
+            System.debug('Catch Block Line no. :'+ ex.getLineNumber());
+            System.debug('Catch Block Cause :'+ ex.getCause());
+            System.debug('Catch Block Message :'+ ex.getMessage());
+        }
+        finally{//ot is not compulsory to write finally block
+            System.debug('finally block:');
+            
+        }
+         
+    }
+
+}
