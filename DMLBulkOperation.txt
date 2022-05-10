@@ -1,0 +1,57 @@
+public class DMLbulkOperation {
+    
+    public static void executeloop(string strCountry){
+        Account obj = new Account();
+        obj.TestField__c= 'sfast';
+        obj.Name= 'test';
+        insert obj ;
+        
+        
+        //list is ordered- we can access value by index no.
+        //list index is started from '0'.
+        
+       	list<string> lstCountries= new list<string>{'India', 'US & Canada', 'Australia', 'Africa', 'UK'};
+        //for each loop    
+        for(string country: lstCountries){
+            system.debug(country);
+        }
+        
+        
+        system.debug('\n----------------------------\n using for loop');
+        //using for loop 
+        
+        integer listSize = lstCountries.Size(); //i.e., 5
+        integer lastIndex= listSize - 1 ; //5-1=4
+        
+        for(integer index=0; index <= lastIndex; index++ ) {
+            system.debug('Index '+ index + ':'+lstCountries[index]);
+        }
+        
+        system.debug('\n----------------------------\n using while loop');
+        //while loop
+        boolean isTrue= False;
+        integer index=0;
+        
+        
+        //'India', 'US & Canada', 'Australia', 'Africa', 'UK'
+        
+        while(index < listSize && istrue == false ){//index = 0 < 5 && istrue == false
+            
+            if(lstCountries[index]== strCountry){
+                istrue = true;
+                system.debug(lstCountries[index]);
+            }
+            
+            index++;
+            
+        }
+        
+        if(!istrue ){
+            system.debug('country does not exist');
+            
+        }
+        
+        
+    }
+
+}
