@@ -2,7 +2,7 @@ public class CollectionDemo {
     
     List<String> lstObj = new List<String>();
     //Set<String> setNames = new Set<String>();
-    
+    //list set map
     
     Integer listSize = 0;
     Integer lastIndex = 0;
